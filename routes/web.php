@@ -159,13 +159,20 @@ Route::put('/admin/settings',[AdminSettingsController::class,'update'])
 use App\Models\Admin;
 
 
-if (!Admin::exists()) {
+$adminExists = true;
+
+try {
+    $adminExists = Admin::exists();
+} catch (\Exception $e) {
+    $adminExists = true;
+}
+
+if (!$adminExists) {
 
     Route::get('/admin/register', [AdminRegisterController::class, 'index'])
         ->name('admin.register');
 
     Route::post('/admin/register', [AdminRegisterController::class, 'store']);
-
 }
 
 
