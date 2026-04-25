@@ -120,23 +120,6 @@ Route::get('/lokasi', [LocationController::class, 'frontend'])
 // ===== LOGIN ADMIN =====
 use App\Http\Controllers\Admin\LoginController;
 
-Route::prefix('admin')->name('admin.')->group(function () {
-
-    // LOGIN
-    Route::get('/login', [LoginController::class, 'loginForm'])->name('login');
-    Route::post('/login', [LoginController::class, 'login']);
-
-    // AREA YANG DIJAGA
-    Route::middleware('auth:admin')->group(function () {
-
-        Route::get('/dashboard', function () {
-            return view('admin.dashboard');
-        })->name('dashboard');
-
-    });
-
-});
-
 
 
 // ===== REGISTER ADMIN =====
@@ -159,21 +142,7 @@ Route::put('/admin/settings',[AdminSettingsController::class,'update'])
 use App\Models\Admin;
 
 
-$adminExists = true;
 
-try {
-    $adminExists = Admin::exists();
-} catch (\Exception $e) {
-    $adminExists = true;
-}
-
-if (!$adminExists) {
-
-    Route::get('/admin/register', [AdminRegisterController::class, 'index'])
-        ->name('admin.register');
-
-    Route::post('/admin/register', [AdminRegisterController::class, 'store']);
-}
 
 
     // ===== Dashboard ADMIN =====
@@ -224,11 +193,6 @@ use App\Http\Controllers\Admin\AboutController;
 // Prefix /admin supaya semua ada di area admin
 Route::prefix('admin')->group(function () {
 
-    // Dashboard
-    Route::get('/', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
-
 // Resourceful routes untuk Hero
    
 Route::prefix('admin')->name('hero.')->group(function () {
@@ -272,9 +236,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('about', AboutController::class);
 });
 
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::resource('kelas', \App\Http\Controllers\Admin\KelasController::class);
-});
+
 
 
 });
