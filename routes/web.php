@@ -222,10 +222,7 @@ use App\Http\Controllers\Admin\AboutController;
 // Prefix /admin supaya semua ada di area admin
 Route::prefix('admin')->group(function () {
 
-    // Dashboard
-    Route::get('/', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
+   
 
 // Resourceful routes untuk Hero
    
