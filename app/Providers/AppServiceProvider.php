@@ -19,15 +19,10 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
-    {
-        View::composer('*', function ($view) {
-
-        $pendingCount = Pendaftar::where('status','pending')
-            ->where('is_read',0)
-            ->count();
-
-        $view->with('pendingCount',$pendingCount);
+   public function boot(): void
+{
+    View::composer('*', function ($view) {
+        $view->with('pendingCount', 0);
     });
-    }
+}
 }
