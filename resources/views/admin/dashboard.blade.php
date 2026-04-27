@@ -2,7 +2,8 @@
 
 @section('content')
 <head>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+      <link rel="stylesheet" href="{{ asset('build/assets/app-BmAVGTu2.css') }}">
+<script src="{{ asset('build/assets/app-CKl8NZMC.js') }}" defer></script>
 </head>
 <div class="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-slate-200 py-10 px-6">
     
