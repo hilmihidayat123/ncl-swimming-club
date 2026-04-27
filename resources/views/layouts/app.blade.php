@@ -18,9 +18,9 @@
    
     {{-- CSS tambahan per halaman --}}
     @stack('css')
-    <link rel="stylesheet" href="{{ asset('build/assets/app-BmAVGTu2.css') }}">
-<script src="{{ asset('build/assets/app-CKl8NZMC.js') }}" defer></script>
+
 </head>
+    <script src="https://cdn.tailwindcss.com"></script>
 <body>
 
    {{-- NAVBAR --}}
