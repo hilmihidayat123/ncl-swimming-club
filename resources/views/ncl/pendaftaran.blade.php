@@ -4,7 +4,8 @@
 
 @section('content')
 <meta charset="UTF-8">
-@vite(['resources/css/app.css', 'resources/js/app.js'])
+<link rel="stylesheet" href="{{ asset('build/assets/app-BmAVGTu2.css') }}">
+<script src="{{ asset('build/assets/app-CKl8NZMC.js') }}" defer></script>
 <script src="https://cdn.tailwindcss.com"></script>
 
 {{-- POPUP ALUR PENDAFTARAN --}}
