@@ -275,3 +275,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 });
 
 
+//
+// force railway rebuild - hilmi fix vite issue
+//
