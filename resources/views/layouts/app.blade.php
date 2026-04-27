@@ -18,7 +18,8 @@
    
     {{-- CSS tambahan per halaman --}}
     @stack('css')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('build/assets/app-BmAVGTu2.css') }}">
+<script src="{{ asset('build/assets/app-CKl8NZMC.js') }}" defer></script>
 </head>
 <body>
 
