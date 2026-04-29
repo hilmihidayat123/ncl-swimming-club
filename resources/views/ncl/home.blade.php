@@ -13,7 +13,7 @@
 
 @if($hero)
 <section class="hero" 
-    style="background-image: url('{{ $hero->image }}');">
+    style="background-image: url('{{ asset('storage/'.$hero->image) }}');">
     
     <div class="hero-overlay"></div>
     <div class="hero-smoke"></div>
